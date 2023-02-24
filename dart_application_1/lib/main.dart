@@ -5,8 +5,7 @@ import 'package:dart_application_1/work-2.6-4.dart';
 import 'package:dart_application_1/work-2.6-5.dart';
 import 'package:dart_application_1/work-2.6-6.dart';
 import 'package:dart_application_1/work-2.6-7.dart';
-
-import 'work-2.6-8.dart';
+import 'package:dart_application_1/work-2.6-8.dart';
 
 void main() {
   print("#1.1 Nod ${DelimetersCalculator.nod(125, 43)}");
