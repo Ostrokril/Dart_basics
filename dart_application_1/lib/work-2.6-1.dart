@@ -2,11 +2,16 @@
 //
 
 class DelimetersCalculator {
-  static int nod(int number1, int number2) {
+  static bool naturNumber(int num1) {
+    // Метод [naturNumber] проверки на отрицательное число и на ноль.
+    return (num1 > 0) ? false : true;
+  }
+
+  static nod(int number1, int number2) {
     // Наибольший общий делитель [nod].
-    if (number1 <= 0 || number2 <= 0) {
-      print("Нельзя вводить отрицательные и дробные числа.");
-      return 0;
+
+    if (naturNumber(number1) || naturNumber(number2)) {
+      return "Нельзя вводить отрицательные числа.";
     }
 
     var temp = 0;
@@ -25,17 +30,17 @@ class DelimetersCalculator {
     return (number2);
   }
 
-  static num nok(int number1, int number2) {
+  static nok(int number1, int number2) {
     // Наименьшее общее кратное [nok].
-    if (number1 <= 0 || number2 <= 0) {
-      print("Нельзя вводить отрицательные и дробные числа.");
-      return 0;
+    if (naturNumber(number1) || naturNumber(number2)) {
+      return "Нельзя вводить отрицательные числа.";
     }
+
     return (number1 / nod(number1, number2) * number2);
   }
 
   static List<int> primeFactorization(int number) {
-    // Простые множители [primeFactorization]
+    // Простые множители [primeFactorization].
     List<int> multipliers = [];
     for (int i = 2; i <= number; i++) {
       if (number % i == 0) {

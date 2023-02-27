@@ -13,13 +13,14 @@ class Point {
   Point(this.x, this.y, this.z);
 
   num distanceTo(Point Dot) {
-    // метод [distanceTo] возвращает расстояние от точки до точки.
+    // Метод [distanceTo] возвращает расстояние от точки до точки.
     var distance =
         sqrt(pow(x - Dot.x, 2) + pow(y - Dot.y, 2) + pow(z - Dot.z, 2));
     return distance;
   }
 
   factory Point.zero() {
+    // Возвращает начало координат
     return Point(0, 0, 0);
   }
 

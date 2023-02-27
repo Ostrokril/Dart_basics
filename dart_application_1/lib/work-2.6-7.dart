@@ -4,27 +4,27 @@
 //
 
 extension RootCor on num {
-  num root(num n) {
+  num root(num number) {
     // Метод [root], который вычисляет корень любой заданной степени из числа. В случае когда значение вернуть невозможно, бросается исключение с описанием ошибки.
-    double sign(double x) {
-      if (x < 0) {
-        x = -x;
+    double sign(double numberSign) {
+      if (numberSign < 0) {
+        numberSign = -numberSign;
       }
-      return (x);
+      return numberSign;
     }
 
     try {
-      double root = this / n;
+      double root = this / number;
       num rn = this;
       while (sign(root - rn) >= 0.00001) {
         rn = this;
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < number; i++) {
           rn = rn / root;
         }
         root = (rn + root) / 2;
       }
       print("root = ${root}");
-      return (n);
+      return number;
     } catch (e) {
       print("Возникло исключение $e");
     }
