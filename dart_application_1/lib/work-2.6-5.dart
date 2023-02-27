@@ -1,10 +1,12 @@
-//5. Есть коллекция строк вида ‘one, two, three, cat, dog’ или любого другого.
-//Реализуйте метод, возвращающий цифры без повторений, которые встречаются в данной строке.
-//Однако цифры встречаются в виде английских слов от zero до nine.
-//Например, в результате строки ‘one, two, zero, zero’ мы получим следующий результат: [1, 2, 0].
-//Если в строке есть слова, не являющиеся цифрами от 0 до 9, пропускайте их.
+// 5. Есть коллекция строк вида ‘one, two, three, cat, dog’ или любого другого. Реализуйте метод, возвращающий цифры без повторений, которые встречаются в данной строке.
+// Однако цифры встречаются в виде английских слов от zero до nine.
+// Например, в результате строки ‘one, two, zero, zero’ мы получим следующий результат: [1, 2, 0].
+// Если в строке есть слова, не являющиеся цифрами от 0 до 9, пропускайте их.
+//
+
 class NotRepNumbers {
-  static notRepeatingNumbers(List x) {
+  static List<int> notRepeatingNumbers(List<String> collectionWords) {
+    // Метод [notRepeatingNumbers] принимает коллекцию слов и возвращает список цифр без повторений, которые встречаются в принимаемой строке.
     Map<String, int> mapNum = {
       "zero": 0,
       "one": 1,
@@ -17,36 +19,13 @@ class NotRepNumbers {
       "eight": 8,
       "nine": 9
     };
-    List<int?> num = [];
-    Set<dynamic> set = x.toSet();
-    for (var n in set) {
-      if (mapNum[n] != null) {
-        num.add(mapNum[n]);
+    List<int> numbers = [];
+    Set setCollection = collectionWords.toSet();
+    for (var i in setCollection) {
+      if (mapNum[i] != null) {
+        numbers.add(mapNum[i]!);
       }
     }
-    return (num);
+    return numbers;
   }
-}
-
-void main() {
-  List collection = [
-    'cat',
-    'four',
-    'three',
-    'seven',
-    'one',
-    '4',
-    'five',
-    'one',
-    'nine',
-    ' ',
-    'two',
-    'three',
-    '1',
-    'zero',
-    'One',
-    'two',
-    'nine'
-  ];
-  print(NotRepNumbers.notRepeatingNumbers(collection));
 }

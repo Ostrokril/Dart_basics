@@ -1,23 +1,21 @@
-import 'package:dart_application_1/work-2.6-1.dart';
-import 'package:dart_application_1/work-2.6-2.dart';
-import 'package:dart_application_1/work-2.6-3.dart';
-import 'package:dart_application_1/work-2.6-4.dart';
-import 'package:dart_application_1/work-2.6-5.dart';
-import 'package:dart_application_1/work-2.6-6.dart';
-import 'package:dart_application_1/work-2.6-7.dart';
-import 'package:dart_application_1/work-2.6-8.dart';
+import '../lib/work-2.6-1.dart';
+import '../lib/work-2.6-2.dart';
+import '../lib/work-2.6-3.dart';
+import '../lib/work-2.6-4.dart';
+import '../lib/work-2.6-5.dart';
+import '../lib/work-2.6-6.dart';
+import '../lib/work-2.6-7.dart';
+import '../lib/work-2.6-8.dart';
 
 void main() {
-  print("#1.1 Nod ${DelimetersCalculator.nod(125, 43)}");
-  print("#1.1 Nok ${DelimetersCalculator.nok(125, 43)}");
+  print("#1.1 Nod ${DelimetersCalculator.nod(126, 44)}");
+  print("#1.1 Nok ${DelimetersCalculator.nok(126, 44)}");
   print(
-      "#1.3 Простые множители ${DelimetersCalculator.primeFactorization(144)}");
-
+      "#1.3 Простые множители ${DelimetersCalculator.primeFactorization(14456)}");
   print(
       "#2.1 Из десятичной в двоичную ${DecimalSystemToBinary.binaryNumberSystem(1500000)}");
   print(
       "#2.2 Из двоичной в десятичную ${DecimalSystemToBinary.decimalSystem(DecimalSystemToBinary.binaryNumberSystem(1500000))}");
-
   print(
       "#3.1 Фильтр строки (только числа) ${CollectionNum.numbersFromString("один 2 3 4етыре пять шесть -7 восемь 9.5 десять 0")}");
 
@@ -34,7 +32,7 @@ void main() {
   ];
   print("#4.1 ${CountWordsInString.wordCollection(mass)}");
 
-  List collection = [
+  List<String> collection = [
     'cat',
     'four',
     'three',
@@ -55,15 +53,18 @@ void main() {
   ];
   print("#5.1 ${NotRepNumbers.notRepeatingNumbers(collection)}");
 
-  var point = Point(10, 10, 10);
-  var distance = point.distanceTo(40, 30, -56);
+  var point1 = Point(10, 10, 10);
+  var point2 = Point(21, 43, -10);
+  var point3 = Point(5, 19, -54);
+
+  var distance = point1.distanceTo(point2);
   print("#6.1 Растояние между точек: $distance");
 
-  var square = sTriangle(40, 30, -56, 10, 10, 10, 0, 0, 0);
+  var square = Point.sTriangle(point1, point2, point3);
   print("#6.2 Площадь треугольника: $square");
 
-  point = Point.zero();
-  distance = point.distanceTo(40, 30, -56);
+  point1 = Point.zero();
+  distance = point1.distanceTo(point2);
   print("#6.3 Растояние от начала координат до точки: $distance");
 
   num number = 122;

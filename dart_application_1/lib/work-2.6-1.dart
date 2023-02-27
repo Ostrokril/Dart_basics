@@ -1,45 +1,49 @@
-//1. Реализуйте методы вычисления НОД и НОК целых чисел. Реализуйте метод, который разбивает число на простые множители и возвращает их.
-//Реализуйте метод, который разбивает число на простые множители и возвращает их.
+// 1. Реализуйте методы вычисления НОД и НОК целых чисел. Реализуйте метод, который разбивает число на простые множители и возвращает их.
+//
+
 class DelimetersCalculator {
-//Наибольший общий делитель nod
-  static nod(int a, int b) {
-    var c = 0;
-
-    if (a < b) {
-      c = a;
-      a = b;
-      b = c;
+  static int nod(int number1, int number2) {
+    // Наибольший общий делитель [nod].
+    if (number1 <= 0 || number2 <= 0) {
+      print("Нельзя вводить отрицательные и дробные числа.");
+      return 0;
     }
 
-    while (a % b != 0) {
-      c = b;
-      b = a % b;
-      a = c;
+    var temp = 0;
+
+    if (number1 < number2) {
+      temp = number1;
+      number1 = number2;
+      number2 = temp;
     }
-    return (b);
+
+    while (number1 % number2 != 0) {
+      temp = number2;
+      number2 = number1 % number2;
+      number1 = temp;
+    }
+    return (number2);
   }
 
-//Наименьшее общее кратное nok
-  static nok(int a, int b) {
-    return (a / nod(a, b) * b);
+  static num nok(int number1, int number2) {
+    // Наименьшее общее кратное [nok].
+    if (number1 <= 0 || number2 <= 0) {
+      print("Нельзя вводить отрицательные и дробные числа.");
+      return 0;
+    }
+    return (number1 / nod(number1, number2) * number2);
   }
 
-//Простые множители
-  static primeFactorization(a) {
-    var list = [];
-    for (var i = 2; i <= a; i++) {
-      if (a % i == 0) {
-        list.add(i);
-        a = a / i;
+  static List<int> primeFactorization(int number) {
+    // Простые множители [primeFactorization]
+    List<int> multipliers = [];
+    for (int i = 2; i <= number; i++) {
+      if (number % i == 0) {
+        multipliers.add(i);
+        number = number ~/ i;
         i = 1;
       }
     }
-    return list;
+    return multipliers;
   }
-}
-
-void main() {
-  print("Nod ${DelimetersCalculator.nod(125, 43)}");
-  print("Nok ${DelimetersCalculator.nok(125, 43)}");
-  print("primeFactorization ${DelimetersCalculator.primeFactorization(144)}");
 }
