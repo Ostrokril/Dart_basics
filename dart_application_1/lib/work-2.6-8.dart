@@ -66,21 +66,3 @@ class UserManager<T extends User> {
     return listUsers;
   }
 }
-
-void main() {
-  var user1 = User("ostrokril@mail.ru");
-  var user2 = AdminUser("admin@administrator.ru");
-  var user3 = GeneralUser("ivan@ya.ru");
-  var user4 = User("petr@gmail.ru");
-  var user2domen = user2.getMailSystem; // вывод домена после @
-  print("#8.1 ${user2domen}");
-
-  UserManager.addUser(user1); // добавить пользователя
-  UserManager.addUser(user2); // добавить пользователя
-  UserManager.addUser(user3); // добавить пользователя
-  UserManager.addUser(user4); // добавить пользователя
-  UserManager.printUser(); // Вывод всех пользователей
-
-  UserManager.removeUser(user1); // Удаление пользователя
-  UserManager.printUser(); // Вывод всех пользователей после удаления
-}
