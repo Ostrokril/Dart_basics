@@ -70,7 +70,6 @@ void main() {
   num number = 122;
   print("#7.1 ${number.root(3)}");
 
-  print("----------------");
   var user1 = User("ostrokril@mail.ru");
   var user2 = AdminUser("admin@administrator.ru");
   var user3 = GeneralUser("ivan@ya.ru");
