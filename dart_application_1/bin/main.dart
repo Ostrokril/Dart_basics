@@ -1,11 +1,11 @@
-import '../lib/work-2.6-1.dart';
-import '../lib/work-2.6-2.dart';
-import '../lib/work-2.6-3.dart';
-import '../lib/work-2.6-4.dart';
-import '../lib/work-2.6-5.dart';
-import '../lib/work-2.6-6.dart';
-import '../lib/work-2.6-7.dart';
-import '../lib/work-2.6-8.dart';
+import 'package:dart_application_1/work-2.6-1.dart';
+import 'package:dart_application_1/work-2.6-2.dart';
+import 'package:dart_application_1/work-2.6-3.dart';
+import 'package:dart_application_1/work-2.6-4.dart';
+import 'package:dart_application_1/work-2.6-5.dart';
+import 'package:dart_application_1/work-2.6-6.dart';
+import 'package:dart_application_1/work-2.6-7.dart';
+import 'package:dart_application_1/work-2.6-8.dart';
 
 void main() {
   print("#1.1 Nod ${DelimetersCalculator.nod(126, 44)}");

@@ -7,11 +7,12 @@ class DelimetersCalculator {
     return (num1 > 0) ? false : true;
   }
 
-  static nod(int number1, int number2) {
+  static int nod(int number1, int number2) {
     // Наибольший общий делитель [nod].
 
     if (naturNumber(number1) || naturNumber(number2)) {
-      return "Нельзя вводить отрицательные числа.";
+      print("Нельзя вводить отрицательные числа.");
+      return 0;
     }
 
     var temp = 0;
@@ -30,10 +31,11 @@ class DelimetersCalculator {
     return (number2);
   }
 
-  static nok(int number1, int number2) {
+  static num nok(int number1, int number2) {
     // Наименьшее общее кратное [nok].
     if (naturNumber(number1) || naturNumber(number2)) {
-      return "Нельзя вводить отрицательные числа.";
+      print("Нельзя вводить отрицательные числа.");
+      return 0;
     }
 
     return (number1 / nod(number1, number2) * number2);
