@@ -8,8 +8,9 @@ class CollectionNum {
     List<String> listData = stringWords.split(' ');
 
     for (int i = 0; i < listData.length; i++) {
-      if (num.tryParse(listData[i]) != null)
+      if (num.tryParse(listData[i]) != null) {
         numbers.add(num.parse(listData[i]));
+      }
     }
     return numbers;
   }

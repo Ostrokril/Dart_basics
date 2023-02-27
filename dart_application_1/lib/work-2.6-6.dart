@@ -12,10 +12,10 @@ class Point {
 
   Point(this.x, this.y, this.z);
 
-  num distanceTo(Point Dot) {
+  num distanceTo(Point dot) {
     // Метод [distanceTo] возвращает расстояние от точки до точки.
     var distance =
-        sqrt(pow(x - Dot.x, 2) + pow(y - Dot.y, 2) + pow(z - Dot.z, 2));
+        sqrt(pow(x - dot.x, 2) + pow(y - dot.y, 2) + pow(z - dot.z, 2));
     return distance;
   }
 

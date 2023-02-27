@@ -2,7 +2,7 @@
 //
 
 class CountWordsInString {
-  static Map wordCollection(List<String> listWords) {
+  static Map<String, int> wordCollection(List<String> listWords) {
     // Метод [wordCollection] принимает коллекцию слова и  считает количество вхождений каждого слова. Возвращает Map<слово, количество вхождений>.
     int count = 0;
     Map<String, int> map = {};
