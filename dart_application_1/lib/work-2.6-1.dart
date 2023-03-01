@@ -54,8 +54,3 @@ class DelimetersCalculator {
     return multipliers;
   }
 }
-
-void main() {
-  print("#1.1 Nod ${DelimetersCalculator.nod(126, 44)}");
-  print("#1.1 Nok ${DelimetersCalculator.nok(-126, 44)}");
-}
