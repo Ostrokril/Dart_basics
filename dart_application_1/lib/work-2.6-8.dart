@@ -61,7 +61,6 @@ class UserManager<T extends User> {
         listUsers.add(users[i].email);
       }
     }
-    print(listUsers);
     return listUsers;
   }
 }

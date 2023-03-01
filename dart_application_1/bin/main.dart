@@ -77,12 +77,13 @@ void main() {
   var user2domen = user2.getMailSystem; // вывод домена после @
   print("#8.1 ${user2domen}");
 
-  UserManager.addUser(user1); // добавить пользователя
-  UserManager.addUser(user2); // добавить пользователя
-  UserManager.addUser(user3); // добавить пользователя
-  UserManager.addUser(user4); // добавить пользователя
-  UserManager.printUser(); // Вывод всех пользователей
+  var manager = UserManager();
+  manager.addUser(user1); // добавить пользователя
+  manager.addUser(user2); // добавить пользователя
+  manager.addUser(user3); // добавить пользователя
+  manager.addUser(user4); // добавить пользователя
+  print(manager.printUser()); // Вывод всех пользователей
 
-  UserManager.removeUser(user1); // Удаление пользователя
-  UserManager.printUser(); // Вывод всех пользователей после удаления
+  manager.removeUser(user1); // Удаление пользователя
+  print(manager.printUser()); // Вывод всех пользователей после удаления
 }
