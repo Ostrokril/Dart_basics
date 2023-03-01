@@ -26,7 +26,7 @@ class DelimetersCalculator {
       }
       return (number2);
     } else {
-      throw new Exception(
+      throw Exception(
           'Число в методе [nod] не может быть отрицательным или равно нулю.');
     }
   }
@@ -36,7 +36,7 @@ class DelimetersCalculator {
     if (!naturNumber(number1) && !naturNumber(number2)) {
       return (number1 / nod(number1, number2) * number2);
     } else {
-      throw new Exception(
+      throw Exception(
           'Число в методе [nok] не может быть отрицательным или равно нулю.');
     }
   }
