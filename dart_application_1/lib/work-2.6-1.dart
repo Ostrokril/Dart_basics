@@ -10,35 +10,35 @@ class DelimetersCalculator {
   static int nod(int number1, int number2) {
     // Наибольший общий делитель [nod].
 
-    if (naturNumber(number1) || naturNumber(number2)) {
-      print("Нельзя вводить отрицательные числа.");
-      return 0;
-    }
+    if (!naturNumber(number1) && !naturNumber(number2)) {
+      var temp = 0;
 
-    var temp = 0;
+      if (number1 < number2) {
+        temp = number1;
+        number1 = number2;
+        number2 = temp;
+      }
 
-    if (number1 < number2) {
-      temp = number1;
-      number1 = number2;
-      number2 = temp;
+      while (number1 % number2 != 0) {
+        temp = number2;
+        number2 = number1 % number2;
+        number1 = temp;
+      }
+      return (number2);
+    } else {
+      throw new Exception(
+          'Число в методе [nod] не может быть отрицательным или равно нулю.');
     }
-
-    while (number1 % number2 != 0) {
-      temp = number2;
-      number2 = number1 % number2;
-      number1 = temp;
-    }
-    return (number2);
   }
 
   static num nok(int number1, int number2) {
     // Наименьшее общее кратное [nok].
-    if (naturNumber(number1) || naturNumber(number2)) {
-      print("Нельзя вводить отрицательные числа.");
-      return 0;
+    if (!naturNumber(number1) && !naturNumber(number2)) {
+      return (number1 / nod(number1, number2) * number2);
+    } else {
+      throw new Exception(
+          'Число в методе [nok] не может быть отрицательным или равно нулю.');
     }
-
-    return (number1 / nod(number1, number2) * number2);
   }
 
   static List<int> primeFactorization(int number) {
@@ -53,4 +53,9 @@ class DelimetersCalculator {
     }
     return multipliers;
   }
+}
+
+void main() {
+  print("#1.1 Nod ${DelimetersCalculator.nod(126, 44)}");
+  print("#1.1 Nok ${DelimetersCalculator.nok(-126, 44)}");
 }
