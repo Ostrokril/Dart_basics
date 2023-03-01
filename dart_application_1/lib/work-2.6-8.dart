@@ -9,7 +9,6 @@
 
 class User {
   String email;
-
   User(this.email);
 }
 
@@ -17,7 +16,7 @@ class AdminUser extends User with GetMailSystem {
   AdminUser(super.email);
 }
 
-class GeneralUser extends User with GetMailSystem {
+class GeneralUser extends User {
   GeneralUser(super.email);
 }
 
@@ -30,16 +29,16 @@ mixin GetMailSystem on User {
 }
 
 class UserManager<T extends User> {
-  static List users = [];
+  List<T> users = [];
 
-  static List addUser(user) {
+  List<T> addUser(user) {
     // Метод [addUser] принимает пользователя и добавляет в список [users].
     users.add(user);
     print("Добвлен пользователь ${user.email}");
-    return (users);
+    return (this.users);
   }
 
-  static List removeUser(user) {
+  List<T> removeUser(user) {
     // Метод [removeUser] принимает пользователя и удаляет из списока [users].
     if (users.contains(user)) {
       users.remove(user);
@@ -51,13 +50,13 @@ class UserManager<T extends User> {
     }
   }
 
-  static List<String> printUser() {
+  List<String> printUser() {
     // Метод [printUser] выводит почтовые адреса пользователей из списка [users]. Если пользователь типа <AdminUser>, то выводит домен почты пользователя.
     List<String> listUsers = [];
     for (var i = 0; i < users.length; i++) {
       if (users[i] is AdminUser) {
-        var sf = users[i].getMailSystem;
-        listUsers.add(sf!);
+        AdminUser userAdmin = users[i] as AdminUser;
+        listUsers.add(userAdmin.getMailSystem);
       } else {
         listUsers.add(users[i].email);
       }
