@@ -2,43 +2,39 @@
 //
 
 class DelimetersCalculator {
-  static bool naturNumber(int num1) {
-    // Метод [naturNumber] проверки на отрицательное число и на ноль.
-    return (num1 > 0) ? false : true;
+  static void checkNumber(int number) {
+    if (number <= 0) {
+      throw Exception(
+          'Число в методе не может быть отрицательным или равно нулю.');
+    }
   }
 
   static int nod(int number1, int number2) {
     // Наибольший общий делитель [nod].
+    checkNumber(number1);
+    checkNumber(number2);
 
-    if (!naturNumber(number1) && !naturNumber(number2)) {
-      var temp = 0;
+    var temp = 0;
 
-      if (number1 < number2) {
-        temp = number1;
-        number1 = number2;
-        number2 = temp;
-      }
-
-      while (number1 % number2 != 0) {
-        temp = number2;
-        number2 = number1 % number2;
-        number1 = temp;
-      }
-      return (number2);
-    } else {
-      throw Exception(
-          'Число в методе [nod] не может быть отрицательным или равно нулю.');
+    if (number1 < number2) {
+      temp = number1;
+      number1 = number2;
+      number2 = temp;
     }
+
+    while (number1 % number2 != 0) {
+      temp = number2;
+      number2 = number1 % number2;
+      number1 = temp;
+    }
+    return number2;
   }
 
   static num nok(int number1, int number2) {
     // Наименьшее общее кратное [nok].
-    if (!naturNumber(number1) && !naturNumber(number2)) {
-      return (number1 / nod(number1, number2) * number2);
-    } else {
-      throw Exception(
-          'Число в методе [nok] не может быть отрицательным или равно нулю.');
-    }
+    checkNumber(number1);
+    checkNumber(number2);
+    return number1 / nod(number1, number2) * number2;
   }
 
   static List<int> primeFactorization(int number) {

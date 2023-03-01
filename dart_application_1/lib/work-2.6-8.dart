@@ -24,30 +24,28 @@ mixin GetMailSystem on User {
   get getMailSystem {
     // метод [getMailSystem] возвращает домен почты пользователя.
     List<String> domen = email.split("@");
-    return (domen[1]);
+    return domen[1];
   }
 }
 
 class UserManager<T extends User> {
   List<T> users = [];
 
-  List<T> addUser(user) {
+  List<T> addUser(T user) {
     // Метод [addUser] принимает пользователя и добавляет в список [users].
     users.add(user);
-    print("Добвлен пользователь ${user.email}");
-    return (this.users);
+    print("Добавлен пользователь ${user.email}");
+    return users;
   }
 
-  List<T> removeUser(user) {
+  List<T> removeUser(T user) {
     // Метод [removeUser] принимает пользователя и удаляет из списока [users].
-    if (users.contains(user)) {
-      users.remove(user);
+    if (users.remove(user)) {
       print("Удален пользователь ${user.email}");
-      return (users);
     } else {
       print("Пользователя ${user.email} не существует");
-      return (users);
     }
+    return users;
   }
 
   List<String> printUser() {

@@ -75,7 +75,7 @@ void main() {
   var user3 = GeneralUser("ivan@ya.ru");
   var user4 = User("petr@gmail.ru");
   var user2domen = user2.getMailSystem; // вывод домена после @
-  print("#8.1 ${user2domen}");
+  print("#8.1 $user2domen");
 
   var manager = UserManager();
   manager.addUser(user1); // добавить пользователя

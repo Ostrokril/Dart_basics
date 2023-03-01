@@ -23,11 +23,11 @@ extension RootCor on num {
         }
         root = (rn + root) / 2;
       }
-      print("root = ${root}");
+      print("root = $root");
       return number;
     } catch (e) {
       print("Возникло исключение $e");
     }
-    return (0);
+    return 0;
   }
 }
